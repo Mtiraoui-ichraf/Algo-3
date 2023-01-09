@@ -1,0 +1,39 @@
+FUNCTION ProduitScalaire( VAR vector1,vector2 : ARRAY_OF INTEGER[10];) : INTEGER
+VAR
+    ProduitS,i : INTEGER
+BEGIN
+    ProduitS := 0
+    i := 0
+    
+    IF (vector1.length <> vector2.length) THEN
+        write("The two vectors are in two different vector spaces.")
+        RETURN "try again"
+    END_IF
+    
+    WHILE (i < vector1.length) DO
+        ProduitS := ProduitS + vector1[i]*vector2[i]
+        i := i + 1
+    END_WHILE
+        
+    RETURN ProduitS ;
+END
+
+
+ALGORITHM are_they_orthogonal
+VAR
+    vector1 , vector2 : ARRAY_OF INTEGER [10]
+    ProduitS : INTEGER
+BEGIN
+    FOR i FROM 0 TO 10 STEP 1  DO
+        Write("Enter component" i + 1 "of the first vector")
+        Read(vector1[i])
+    END_FOR
+    FOR i FROM 0 TO 10 STEP 1  DO
+        Write("Enter component" i + 1 "of the second vector")
+        Read(vector2[i])
+    END_FOR
+    IF (ProduitScalaire(vecteur1, vecteur2) = 0) THEN
+        Write("Vecteur 1 and vecteur 2 are_they_orthogonal")
+    ELSE
+        Write("Vecteur 1 et vecteur 2 are not orthogonal")
+END
